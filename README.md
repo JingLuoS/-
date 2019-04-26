@@ -1,94 +1,91 @@
----
-title: "-----------------½ÌÎñÏµÍ³Ä£ÄâµÇÂ¼£¬»ñÈ¡¿Î±í------------------"
-output: html_document
----
 
-## µÇÂ¼¹ı³Ì¼òÒªËµÃ÷
 
->### ×¢Òâ
->* *httpĞ­ÒéÊÇÎŞ×´Ì¬µÄ£¬Ò²¾ÍÊÇËµÒ»´ÎÁ¬½Ó¹ıºóËü²¢²»»á¼Ç×¡ÕâÒ»´ÎµÄÁ¬½ÓĞĞÎª¡£¶ÔÓÚÓĞµÇÂ¼ÇÒÔÚµÇÂ½ºóÓĞºóĞø²Ù×÷µÄĞĞÎªÎÒÃÇĞèÊ¹·şÎñÆ÷ÓĞÒ»ÖÖĞĞÎª¼Ç×¡ÎÒÃÇµÄµÇÂ½×´Ì¬.¼´cookies,ÓÉ·şÎñÆ÷Éú³É±£´æÔÚ¿Í»§¶Ë¡£*
->* *ÔÚpythonÖĞrequests¿â¶ÔhttpÇëÇó½øĞĞÁË·â×°£¬Ìá¹©ÁË¶ÔÏûÏ¢µÄ´¦Àíº¯Êı¡£¶ÔÓÚcookiesÉèÖÃÁËsession»á»°º¯Êı½øĞĞ×Ô¶¯±£´æ£¬²»ÓÃ¶îÍâ»ñÈ¡cookies£¬Ò»¸ösession¼´Ò»ÏµÁĞÁ¬ĞøµÄ²Ù×÷¡£*
->* *×¼±¸¹¤×÷Êı¾İ°ü·ÖÎö£¬¿ÉÒÔÊ¹ÓÃä¯ÀÀÆ÷×Ô´ø¿ª·¢Õß¹¤¾ß*
->* *´ËÊÂÀı»·¾³python3*
->### ²½ÖèËµÃ÷
-> 1. »ñÈ¡csrftoken
->>* tokenÔÚµÇÂ¼Ò³ÃæÇ°¶ËÓÉjsÉú³É
->>* Ïòhttp://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CN·¢ËÍgetÇëÇó£¬»ñÈ¡·µ»ØµÄhtmlÒ³Ãæ
->>* pythinÕıÔò±í´ïÊ½»ñÈ¡htmlÄÚÈİÖĞµÄcsrftokenµÄvalueÖµ
+## ç™»å½•è¿‡ç¨‹ç®€è¦è¯´æ˜
 
-> 2. »ñÈ¡exponentºÍmodulusÉú³É¹«Ô¿
->>* Ïòhttp://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=...."·¢ËÍgetÇëÇó
->>* ×¢ÒâÔÚÇëÇó×îºóÒª¼ÓÉÏÊ±¼ä´Á£¬Ô­ÍøÒ³Ê¹ÓÃjsÉú³ÉµÄ13Î»Ê±¼ä´Á£¬µ«ÔÚpythonÖĞÖ»ÄÜ¾«È·µ½Ãë¼´10Î»¡£±¾ÊµÀıÔÚ10Î»ºó¼ÓÉÏÁËËæ»ú²úÉúµÄÈıÎ»ÕûÊı¡£Ò²¿ÉÒÔÖ±½Ó³ËÒÔ1000¡£
->>* ½ÓÊÜµ½µÄexponentºÍmodulusÎªbase64±àÂëµÄ×Ö·û´®£¬×÷´¦ÀíºóÉú³ÉpublicKey(ºóÃæ»áËµµ½¾ßÌå´¦Àí)¡£¼ÓÃÜËã·¨²ÉÓÃrsa¡£
+>### æ³¨æ„
+>* *httpåè®®æ˜¯æ— çŠ¶æ€çš„ï¼Œä¹Ÿå°±æ˜¯è¯´ä¸€æ¬¡è¿æ¥è¿‡åå®ƒå¹¶ä¸ä¼šè®°ä½è¿™ä¸€æ¬¡çš„è¿æ¥è¡Œä¸ºã€‚å¯¹äºæœ‰ç™»å½•ä¸”åœ¨ç™»é™†åæœ‰åç»­æ“ä½œçš„è¡Œä¸ºæˆ‘ä»¬éœ€ä½¿æœåŠ¡å™¨æœ‰ä¸€ç§è¡Œä¸ºè®°ä½æˆ‘ä»¬çš„ç™»é™†çŠ¶æ€.å³cookies,ç”±æœåŠ¡å™¨ç”Ÿæˆä¿å­˜åœ¨å®¢æˆ·ç«¯ã€‚*
+>* *åœ¨pythonä¸­requestsåº“å¯¹httpè¯·æ±‚è¿›è¡Œäº†å°è£…ï¼Œæä¾›äº†å¯¹æ¶ˆæ¯çš„å¤„ç†å‡½æ•°ã€‚å¯¹äºcookiesè®¾ç½®äº†sessionä¼šè¯å‡½æ•°è¿›è¡Œè‡ªåŠ¨ä¿å­˜ï¼Œä¸ç”¨é¢å¤–è·å–cookiesï¼Œä¸€ä¸ªsessionå³ä¸€ç³»åˆ—è¿ç»­çš„æ“ä½œã€‚*
+>* *å‡†å¤‡å·¥ä½œæ•°æ®åŒ…åˆ†æï¼Œå¯ä»¥ä½¿ç”¨æµè§ˆå™¨è‡ªå¸¦å¼€å‘è€…å·¥å…·*
+>* *æ­¤äº‹ä¾‹ç¯å¢ƒpython3*
+>### æ­¥éª¤è¯´æ˜
+> 1. è·å–csrftoken
+>>* tokenåœ¨ç™»å½•é¡µé¢å‰ç«¯ç”±jsç”Ÿæˆ
+>>* å‘http://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_slogin.html?language=zh_CNå‘é€getè¯·æ±‚ï¼Œè·å–è¿”å›çš„htmlé¡µé¢
+>>* pythinæ­£åˆ™è¡¨è¾¾å¼è·å–htmlå†…å®¹ä¸­çš„csrftokençš„valueå€¼
 
-> 3. »ñÈ¡µÇÂ¼×´Ì¬£¬¼´µÇÂ¼³É¹¦½«×´Ì¬±£´æµ½session
->>* Ïòhttp://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_slogin.html·¢ËÍpostÇëÇó
->>* postÖĞĞ¯´øÊı¾İ
+> 2. è·å–exponentå’Œmodulusç”Ÿæˆå…¬é’¥
+>>* å‘http://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_getPublicKey.html?time=...."å‘é€getè¯·æ±‚
+>>* æ³¨æ„åœ¨è¯·æ±‚æœ€åè¦åŠ ä¸Šæ—¶é—´æˆ³ï¼ŒåŸç½‘é¡µä½¿ç”¨jsç”Ÿæˆçš„13ä½æ—¶é—´æˆ³ï¼Œä½†åœ¨pythonä¸­åªèƒ½ç²¾ç¡®åˆ°ç§’å³10ä½ã€‚æœ¬å®ä¾‹åœ¨10ä½ååŠ ä¸Šäº†éšæœºäº§ç”Ÿçš„ä¸‰ä½æ•´æ•°ã€‚ä¹Ÿå¯ä»¥ç›´æ¥ä¹˜ä»¥1000ã€‚
+>>* æ¥å—åˆ°çš„exponentå’Œmodulusä¸ºbase64ç¼–ç çš„å­—ç¬¦ä¸²ï¼Œä½œå¤„ç†åç”ŸæˆpublicKey(åé¢ä¼šè¯´åˆ°å…·ä½“å¤„ç†)ã€‚åŠ å¯†ç®—æ³•é‡‡ç”¨rsaã€‚
+
+> 3. è·å–ç™»å½•çŠ¶æ€ï¼Œå³ç™»å½•æˆåŠŸå°†çŠ¶æ€ä¿å­˜åˆ°session
+>>* å‘http://jwgl8.ujn.edu.cn/jwglxt/xtgl/login_slogin.htmlå‘é€postè¯·æ±‚
+>>* postä¸­æºå¸¦æ•°æ®
 
                 data = {
                         "csrftoken":
-                        "yhm":ÓÃ»§Ãû
-                        "mm":ÃÜÂë(¼ÓÃÜºó)
-                        "mm":ÃÜÂë(¼ÓÃÜºó)
+                        "yhm":ç”¨æˆ·å
+                        "mm":å¯†ç (åŠ å¯†å)
+                        "mm":å¯†ç (åŠ å¯†å)
                          }
 
->>* fiddler×¥È¡Êı¾İ°ü¸´ÖÆheaders×÷Îª´Ë´ÎÇëÇóÊı¾İÍ·
+>>* fiddleræŠ“å–æ•°æ®åŒ…å¤åˆ¶headersä½œä¸ºæ­¤æ¬¡è¯·æ±‚æ•°æ®å¤´
 
-> 4. »ñÈ¡¿Î±í
->>* Ïòhttp://jwgl8.ujn.edu.cn/jwglxt/kbcx/xskbcx_cxXsKb.html?gnmkdm=N2151·¢ËÍpostÇëÇó
+> 4. è·å–è¯¾è¡¨
+>>* å‘http://jwgl8.ujn.edu.cn/jwglxt/kbcx/xskbcx_cxXsKb.html?gnmkdm=N2151å‘é€postè¯·æ±‚
 
                 data = {
-                    "xnm":Ñ§Äê
-                    "xqm":Ñ§ÆÚ£¬µÚÒ»»òµÚ¶şÑ§ÆÚ         
+                    "xnm":å­¦å¹´
+                    "xqm":å­¦æœŸï¼Œç¬¬ä¸€æˆ–ç¬¬äºŒå­¦æœŸ         
                     }
->>* »ñÈ¡·µ»ØµÄjsonÊı¾İ£¬²¢ÌáÈ¡ËùĞèµÄÊı¾İ
+>>* è·å–è¿”å›çš„jsonæ•°æ®ï¼Œå¹¶æå–æ‰€éœ€çš„æ•°æ®
 
-## º¯ÊıAPI
+## å‡½æ•°API
 
 > 1. Class GetLogin:
->>* __init__(self, username, passward)------//³õÊ¼»¯
->>* getCsrftoken()    ------//»ñÈ¡token
->>* getPublicKeyAndEncrypt() ------//»ñÈ¡exponentºÍmodulus²¢Éú³ÉPublicKeyÈ»ºó¼ÓÃÜÃÜÂë
->>* getLogin()------//»ñÈ¡µÇÂ¼×´Ì¬
+>>* __init__(self, username, passward)------//åˆå§‹åŒ–
+>>* getCsrftoken()    ------//è·å–token
+>>* getPublicKeyAndEncrypt() ------//è·å–exponentå’Œmoduluså¹¶ç”ŸæˆPublicKeyç„¶ååŠ å¯†å¯†ç 
+>>* getLogin()------//è·å–ç™»å½•çŠ¶æ€
 
 > 2. Class GetInfo(GetLogin):
->>* __init__(self,username,password,school_year,semester)------//¼Ì³ĞGetLOgin£¬ĞèÒªÓÃµ½GetLoginÀïµÄsession»á»°
->>* getCourse()------//»ñÈ¡¿Î±í£¬´¦ÀíÊı¾İ
+>>* __init__(self,username,password,school_year,semester)------//ç»§æ‰¿GetLOginï¼Œéœ€è¦ç”¨åˆ°GetLoginé‡Œçš„sessionä¼šè¯
+>>* getCourse()------//è·å–è¯¾è¡¨ï¼Œå¤„ç†æ•°æ®
 
 > 3. Class Connection(GetInfo):
->>* __init__(self,username,password,school_year,semester)------//¼Ì³ĞGetInfo£¬ĞèÒªÓÃµ½GetInfoÀïÓĞsession»á»°µÄgetCourse
->>* formatData()------//¸ñÊ½»¯¼üÅÌÊäÈëÊı¾İ
->>* isExistUserCourse()------//¼ì²âÊı¾İ¿âÊÇ·ñÓĞ±¸·İ£¬ÓĞÔòÖ±½ÓÈ¡³ö£¬Ã»ÓĞÔòµ÷ÓÃgetCourse,²¢´æÈëÊı¾İ¿â
->>* courseHandle()------//½«´¦ÀíºóµÄ¿Î±íÊı¾İ²åÈëµ½Êı¾İ¿â
->>* getCourseFromMysql------//()´ÓÊı¾İ¿â¶ÁÈ¡·ûºÏ¼üÅÌÊäÈëµÄÊı¾İ
+>>* __init__(self,username,password,school_year,semester)------//ç»§æ‰¿GetInfoï¼Œéœ€è¦ç”¨åˆ°GetInfoé‡Œæœ‰sessionä¼šè¯çš„getCourse
+>>* formatData()------//æ ¼å¼åŒ–é”®ç›˜è¾“å…¥æ•°æ®
+>>* isExistUserCourse()------//æ£€æµ‹æ•°æ®åº“æ˜¯å¦æœ‰å¤‡ä»½ï¼Œæœ‰åˆ™ç›´æ¥å–å‡ºï¼Œæ²¡æœ‰åˆ™è°ƒç”¨getCourse,å¹¶å­˜å…¥æ•°æ®åº“
+>>* courseHandle()------//å°†å¤„ç†åçš„è¯¾è¡¨æ•°æ®æ’å…¥åˆ°æ•°æ®åº“
+>>* getCourseFromMysql------//()ä»æ•°æ®åº“è¯»å–ç¬¦åˆé”®ç›˜è¾“å…¥çš„æ•°æ®
 
 > 4. Class RSAKey:
->>* setPublic(self, N, E)------//½«exponentºÍmodulusÓÉhex×ªÎªÊ®½øÖÆ 
->>* encrypt(self, text)------//¼ÓÃÜÃÜÂë£¬²¢´¦Àí¼ÓÃÜºóÃÜÎÄ
+>>* setPublic(self, N, E)------//å°†exponentå’Œmodulusç”±hexè½¬ä¸ºåè¿›åˆ¶ 
+>>* encrypt(self, text)------//åŠ å¯†å¯†ç ï¼Œå¹¶å¤„ç†åŠ å¯†åå¯†æ–‡
 
-## start.py ²âÊÔ
->* ¼ûstart.pyÎÄ¼ş
+## start.py æµ‹è¯•
+>* è§start.pyæ–‡ä»¶
 
-## exponentºÍmodulus´¦ÀíÒÔ¼°¼ÓÃÜËµÃ÷£º
->* Ô­Ê¼Îªbase64×Ö·û´®
->* python¿âbase64½âÂëbase64±àÂë£¬½«½âÂëºóµÄ×Ö·ûÔÙ×ª»»³Éhex(ÓÉbinascii¿âÍê³É)¡£´Ë²½ÖèÒ²¿É×ÔĞĞ±àÂëÍê³É¡£
->* ÓÉÊ®Áù½øÖÆµÄexponentºÍmodulusÉú³ÉpublicKey,ÓÃÓÚÖ®ºó¼ÓÃÜ
->* ¼ÓÃÜ²ÉÓÃrsaËã·¨¡£·µ»ØÊ®Áù½øÖÆÃÜÎÄ¡£
->* ½«Ê®Áù½øÖÆµÄÃÜÎÄ´¦ÀíºóÔÙ×ªÎªbase64±àÂë×÷ÎªpostÇëÇóµÄ²ÎÊı
+## exponentå’Œmoduluså¤„ç†ä»¥åŠåŠ å¯†è¯´æ˜ï¼š
+>* åŸå§‹ä¸ºbase64å­—ç¬¦ä¸²
+>* pythonåº“base64è§£ç base64ç¼–ç ï¼Œå°†è§£ç åçš„å­—ç¬¦å†è½¬æ¢æˆhex(ç”±binasciiåº“å®Œæˆ)ã€‚æ­¤æ­¥éª¤ä¹Ÿå¯è‡ªè¡Œç¼–ç å®Œæˆã€‚
+>* ç”±åå…­è¿›åˆ¶çš„exponentå’Œmodulusç”ŸæˆpublicKey,ç”¨äºä¹‹ååŠ å¯†
+>* åŠ å¯†é‡‡ç”¨rsaç®—æ³•ã€‚è¿”å›åå…­è¿›åˆ¶å¯†æ–‡ã€‚
+>* å°†åå…­è¿›åˆ¶çš„å¯†æ–‡å¤„ç†åå†è½¬ä¸ºbase64ç¼–ç ä½œä¸ºpostè¯·æ±‚çš„å‚æ•°
 
-## ¸½×¢
->* mysqlÊı¾İ¿âv8.0 
->* Êı¾İ¿âÃûcourse ±íÃûschool_timetable
->* ±í×Ö¶ÎÃû
->>* username:Ñ§ÉúÑ§ºÅ
->>* course_name£º¿Î³ÌÃû³Æ
->>* week£ºĞÇÆÚ
->>* time£ºÊ±¼ä£¨½ÚÊı£©
->>* teacher_name£ºÊÚ¿Î½ÌÊ¦
->>* address£ºµØµã
->>* which_week£ºµ¥Ë«ÖÜ
->>* school_year£ºÑ§Äê
->>* semester£ºÑ§ÆÚ
+## é™„æ³¨
+>* mysqlæ•°æ®åº“v8.0 
+>* æ•°æ®åº“åcourse è¡¨åschool_timetable
+>* è¡¨å­—æ®µå
+>>* username:å­¦ç”Ÿå­¦å·
+>>* course_nameï¼šè¯¾ç¨‹åç§°
+>>* weekï¼šæ˜ŸæœŸ
+>>* timeï¼šæ—¶é—´ï¼ˆèŠ‚æ•°ï¼‰
+>>* teacher_nameï¼šæˆè¯¾æ•™å¸ˆ
+>>* addressï¼šåœ°ç‚¹
+>>* which_weekï¼šå•åŒå‘¨
+>>* school_yearï¼šå­¦å¹´
+>>* semesterï¼šå­¦æœŸ
 
     
 
