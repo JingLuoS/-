@@ -7,7 +7,7 @@ class Connection(GetInfo):
     def __init__(self,username,password,school_year,semester):
         super().__init__(username, password,school_year,semester)
 
-    db = pymysql.connect("localhost","root","123456","course")
+    db = pymysql.connect("localhost","root","******","course")
     
     #格式化数据
     def formatData(self):
