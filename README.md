@@ -67,6 +67,7 @@
 >* 见start.py文件
 
 ## exponent和modulus处理以及加密说明：
+>* e和m作为生成rsa公钥的两个参数
 >* 原始为base64字符串
 >* python库base64解码base64编码，将解码后的字符再转换成hex(由binascii库完成)。此步骤也可自行编码完成。
 >* 由十六进制的exponent和modulus生成publicKey,用于之后加密
